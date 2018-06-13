@@ -10,11 +10,11 @@ export const addMessage = (message, author) => ({
   author
 })
 
-export const addUser = name => ({
-  type: types.ADD_USER,
-  id: nextUserId++,
-  name
-})
+// export const addUser = name => ({
+//   type: types.ADD_USER,
+//   id: nextUserId++,
+//   name
+// })
 
 export const messageReceived = (message, author) => ({
   type: types.MESSAGE_RECEIVED,
@@ -26,4 +26,4 @@ export const messageReceived = (message, author) => ({
 export const populateUsersList = users => ({
   type: types.USERS_LIST,
   users
-}
+})
