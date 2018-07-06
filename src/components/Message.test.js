@@ -19,7 +19,7 @@ const setup = () => {
 }
 
 describe('Message', () => {
-  it('can render self', () => {
+  it('can render itself', () => {
     const { enzymeWrapper } = setup()
     expect(enzymeWrapper.find('p').html()).toBe('<p><i>Lenora</i>: Hey there</p>')
   })

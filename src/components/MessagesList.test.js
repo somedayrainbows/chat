@@ -2,15 +2,14 @@ import React from 'react'
 import Enzyme from 'enzyme'
 import { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import AddMessage from './AddMessage'
+import MessagesList from './MessagesList'
 
 const setup = () => {
   const props = {
-    users: [],
-    addUser: jest.fn()
+    messages: []
   }
   Enzyme.configure({ adapter: new Adapter() })
-  const enzymeWrapper = mount(<AddMessage {...props} />)
+  const enzymeWrapper = mount(<MessagesList {...props} />)
 
   return {
     props,
@@ -18,9 +17,9 @@ const setup = () => {
   }
 }
 
-describe('AddMessage', () => {
+describe('MessagesList', () => {
   it('can render itself', () => {
     const { enzymeWrapper } = setup()
-    expect(enzymeWrapper.find('section#new-message').length).toBe(1)
+    expect(enzymeWrapper.find('section#messages-list').length).toBe(1)
   })
 })
