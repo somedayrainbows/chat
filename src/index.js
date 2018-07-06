@@ -10,7 +10,7 @@ import chat from './reducers'
 
 const store = createStore(chat)
 
-store.dispatch(addUser('Me'))
+store.dispatch(addUser('Erin'))
 
 ReactDOM.render(
   <Provider store={store}>
