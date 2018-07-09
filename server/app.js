@@ -1,5 +1,6 @@
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 8080 })
+
+const wss = new WebSocket.Server({ port: 8181 })
 
 const users = []
 
@@ -15,6 +16,7 @@ wss.on('connection', (ws) => {
   let index
   ws.on('message', (message) => {
     const data = JSON.parse(message)
+    console.log(message)
     switch (data.type) {
       case 'ADD_USER': {
         index = users.length
@@ -33,7 +35,7 @@ wss.on('connection', (ws) => {
         broadcast({
           type: 'ADD_MESSAGE',
           message: data.message,
-          author: data.author,
+          author: data.author
         }, ws)
         break
       default:
