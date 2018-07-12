@@ -2,7 +2,7 @@ import * as types from '../constants/ActionTypes'
 import { messageReceived, populateUsersList } from '../actions'
 
 const setupSocket = (dispatch, username) => {
-  const socket = new WebSocket('ws://localhost:8181')
+  const socket = new WebSocket('wss://localhost:3030')
 
   socket.onopen = () => {
     socket.send(JSON.stringify({
@@ -23,7 +23,6 @@ const setupSocket = (dispatch, username) => {
         break
     }
   }
-
   return socket
 }
 

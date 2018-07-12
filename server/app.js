@@ -1,7 +1,5 @@
 const WebSocket = require('ws')
-
-const wss = new WebSocket.Server({ port: 8181 })
-
+const wss = new WebSocket.Server({ port: 3030 })
 const users = []
 
 const broadcast = (data, ws) => {
